@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const NavBar = () => {
   return (
-    <nav className="px-10 py-2 bg-slate-900">
+    <nav className="px-5 md:px-10 py-2 bg-slate-900">
         <Link href={"/"}>
         <Image 
             src={"/icon.png"} 
