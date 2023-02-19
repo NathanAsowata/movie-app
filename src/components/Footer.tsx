@@ -3,7 +3,10 @@ import Link from "next/link"
 const Footer = () => {
 
   return (
-    <footer className="bg-slate-900 text-white py-2 text-center">
+    <footer 
+        role={"footer"}
+        className="bg-slate-900 text-white py-2 text-center"
+    >
         <p>
             Designed and built by &nbsp;
             <Link 
@@ -23,7 +26,7 @@ const Footer = () => {
             </Link>
         </p>
         <p>
-            All rights reserved. &copy; {new Date().getFullYear()}
+            All rights reserved. &copy; <span data-testid="date">{new Date().getFullYear()}</span>
         </p>
     </footer>
   )
