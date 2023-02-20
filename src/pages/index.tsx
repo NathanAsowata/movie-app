@@ -13,7 +13,11 @@ const Home = () => {
         <section 
           className="bg-[url('../../public/hero-image.jpg')] bg-no-repeat bg-cover bg-center h-[400px] grid place-content-center"
         >
-          <h1 className="shadow-md shadow-gray-400 bg-slate-900 p-5 text-4xl text-center font-bold">Explore Millions of Movies and TV Shows</h1>
+          <h1 
+            className="shadow-md shadow-gray-400 bg-slate-900 p-3 text-4xl text-center font-medium"
+          >
+            Explore Millions of Movies and TV Shows
+          </h1>
         </section>
       </main>
     </>
