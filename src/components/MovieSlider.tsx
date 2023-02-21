@@ -40,7 +40,7 @@ const MovieSlider = ({name, link}:movieList) => {
         <h1>{name}</h1>
         <section>
             {data.results.map((movie:movieCard) => {
-                return <MovieCard movie={movie} />
+                return <MovieCard movie={movie} key={movie.id} />
             })}
         </section>
     </div>
