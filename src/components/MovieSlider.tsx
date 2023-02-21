@@ -1,12 +1,13 @@
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
+import MovieCard from "./MovieCard"
 
-interface propTypes {
+interface movieList {
     name:string,
     link:string
 }
 
-interface movieType {
+interface movieCard {
     id:string,
     title: string,
     poster_path: string,
@@ -14,7 +15,7 @@ interface movieType {
 }
 
 
-const MovieSlider = ({name, link}:propTypes) => {
+const MovieSlider = ({name, link}:movieList) => {
   
     const fetchData = async (url:string) => {
         let fetchResult = await axios.get(url)
@@ -38,12 +39,9 @@ const MovieSlider = ({name, link}:propTypes) => {
     <div>
         <h1>{name}</h1>
         <section>
-            {data.results.map((movie:movieType) => {
-                return(<div key={movie.id}>
-                    <p>{movie.title}</p>
-                    <p>{movie.vote_average}</p>
-                </div>
-            )})}
+            {data.results.map((movie:movieCard) => {
+                return <MovieCard movie={movie} />
+            })}
         </section>
     </div>
   )
