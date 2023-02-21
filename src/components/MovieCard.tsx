@@ -21,7 +21,7 @@ const MovieCard = ({movie}:movieCardProp) => {
   }
 
   return (
-    <div className="w-{150px}">
+    <div className="w-{150px} bg-slate-900 p-2 m-2 w-fit">
         <Image 
           src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} 
           alt={movie.title}
@@ -29,7 +29,9 @@ const MovieCard = ({movie}:movieCardProp) => {
           height={100}
           />
           <section>
-            <h3>{trucateMovieTitle(movie.title)}</h3>
+            <h3 className="text-md font-semibold py-2">
+              {trucateMovieTitle(movie.title)}
+            </h3>
             <p>{movie.vote_average}</p>
           </section>
     </div>
