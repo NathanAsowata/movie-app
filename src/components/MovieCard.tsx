@@ -1,11 +1,12 @@
 import Image from "next/image"
+import Stars from "./Stars"
 
 interface movieCardProp {
   movie: {
     id:string,
     title: string,
     poster_path: string,
-    vote_average: string
+    vote_average: number
   }
 }
 
@@ -32,7 +33,7 @@ const MovieCard = ({movie}:movieCardProp) => {
             <h3 className="text-md font-semibold py-2">
               {trucateMovieTitle(movie.title)}
             </h3>
-            <p>{movie.vote_average}</p>
+            <Stars vote_average={movie.vote_average} />
           </section>
     </div>
   )

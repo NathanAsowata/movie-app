@@ -11,7 +11,7 @@ interface movieCard {
     id:string,
     title: string,
     poster_path: string,
-    vote_average: string
+    vote_average: number
 }
 
 
@@ -36,7 +36,7 @@ const MovieSlider = ({name, link}:movieList) => {
     }
   
     return (
-    <div>
+    <div className="p-4">
         <h1>{name}</h1>
         <section>
             {data.results.map((movie:movieCard) => {
