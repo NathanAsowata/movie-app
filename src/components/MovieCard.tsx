@@ -12,17 +12,28 @@ interface movieCardProp {
 
 const MovieCard = ({movie}:movieCardProp) => {
 
+
   const trucateMovieTitle = (title:string) => {
-    if (title.length > 20){
-      return title.slice(0, 20) + "..."
+    // On screens less than 500px in width return the first 10 characters of the movie title string
+    if (title.length > 10 && window.innerWidth <= 500){
+      return title.slice(0, 10) + "..."
     } 
+    // On screens less than 768px in width return the first 14 characters of the movie title string
+    else if(title.length > 14 && window.innerWidth <= 768){
+      return title.slice(0, 14) + "..."
+    }
+    // On screens greater than 768px in width return the first 18 characters of the movie title string
+    else if(title.length >18 && window.innerWidth > 768){
+      return title.slice(0, 18) + "..."
+    }
+    // If a movie title does not meet any of these conditions, return it without any string manipulation 
     else{
       return title
     }
   }
 
   return (
-    <div className="w-{150px} bg-slate-900 p-2 m-2 w-fit">
+    <div className=" bg-slate-900 p-2 m-2 w-fit">
         <Image 
           src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} 
           alt={movie.title}

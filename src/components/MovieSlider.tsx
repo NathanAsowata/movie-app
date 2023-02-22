@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 import MovieCard from "./MovieCard"
+import Slider from "react-slick"
+
 
 interface movieList {
     name:string,
@@ -16,7 +18,39 @@ interface movieCard {
 
 
 const MovieSlider = ({name, link}:movieList) => {
-  
+
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 6,
+        slidesToScroll: 2,
+        swipeToSlide: true,
+        responsive: [
+            {
+              breakpoint: 1024,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 2,
+              }
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 3,
+                slidesToScroll: 1,
+              }
+            },
+            {
+              breakpoint: 500,
+              settings: {
+                slidesToShow: 1.8,
+                slidesToScroll: 1,
+              }
+            }
+        ]
+    }
+
     const fetchData = async (url:string) => {
         let fetchResult = await axios.get(url)
         return fetchResult.data
@@ -36,13 +70,14 @@ const MovieSlider = ({name, link}:movieList) => {
     }
   
     return (
-    <div className="p-4">
-        <h1>{name}</h1>
-        <section>
+    <div className="p-4 mx-5">
+        <h1 className="text-2xl font-bold mt-5 mb-3">{name}</h1>  
+        <Slider {...settings}>
             {data.results.map((movie:movieCard) => {
                 return <MovieCard movie={movie} key={movie.id} />
             })}
-        </section>
+        </Slider> 
+        
     </div>
   )
 }
