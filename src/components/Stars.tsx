@@ -11,22 +11,22 @@ const Stars = ({ vote_average }:movieRatings) => {
 
    switch (userRating) {
     case 0:
-        return <span className="flex"> <AiOutlineStar /> <AiOutlineStar /> <AiOutlineStar /> <AiOutlineStar /> <AiOutlineStar /> </span>
+        return <span className="flex" data-testid="0"> <AiOutlineStar /> <AiOutlineStar /> <AiOutlineStar /> <AiOutlineStar /> <AiOutlineStar /> </span>
     
     case 1:
-        return <span className="flex"> <AiFillStar /> <AiOutlineStar /> <AiOutlineStar /> <AiOutlineStar /> <AiOutlineStar /> </span>
+        return <span className="flex" data-testid="1"> <AiFillStar /> <AiOutlineStar /> <AiOutlineStar /> <AiOutlineStar /> <AiOutlineStar /> </span>
 
     case 2:
-        return <span className="flex"> <AiFillStar /> <AiFillStar /> <AiOutlineStar /> <AiOutlineStar /> <AiOutlineStar /> </span>
+        return <span className="flex" data-testid="2"> <AiFillStar /> <AiFillStar /> <AiOutlineStar /> <AiOutlineStar /> <AiOutlineStar /> </span>
 
     case 3:
-        return <span className="flex"> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiOutlineStar /> <AiOutlineStar /> </span>
+        return <span className="flex" data-testid="3"> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiOutlineStar /> <AiOutlineStar /> </span>
 
     case 4:
-        return <span className="flex"> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiOutlineStar /> </span>
+        return <span className="flex" data-testid="4"> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiOutlineStar /> </span>
 
     case 5:
-        return <span className="flex"> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiFillStar /> </span>
+        return <span className="flex" data-testid="5"> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiFillStar /> <AiFillStar /> </span>
 
     default:
         return <p className="flex">N/A</p>
