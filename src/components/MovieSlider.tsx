@@ -2,6 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import axios from "axios"
 import MovieCard from "./MovieCard"
 import Slider from "react-slick"
+import ContentLoader from "react-content-loader"
 
 
 interface movieList {
@@ -63,7 +64,25 @@ const MovieSlider = ({name, link, queryKey}:movieList) => {
     })
 
     if(isLoading) {
-        return <div className="text-white text-center">Loading...</div>
+        // This is a shimmer effect for the loading state
+        return (
+          <ContentLoader
+            speed={2}
+            width={300}
+            height={100}
+            viewBox="0 0 300 100"
+            backgroundColor="#1E293B"
+            foregroundColor="#0F172A"
+            uniqueKey="shimmer"
+            className="flex"
+          >
+            <rect x="0" y="0" rx="3" ry="3" width="150" height="250" /> 
+            <rect x="0" y="20" rx="3" ry="3" width="150" height="250" /> 
+            <rect x="0" y="40" rx="3" ry="3" width="150" height="250" /> 
+            <rect x="0" y="60" rx="3" ry="3" width="150" height="250" /> 
+            <rect x="0" y="80" rx="3" ry="3" width="150" height="250" />
+          </ContentLoader>
+        )
     }
 
     if(isError) {
