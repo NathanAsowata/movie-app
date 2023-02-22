@@ -6,7 +6,8 @@ import Slider from "react-slick"
 
 interface movieList {
     name:string,
-    link:string
+    link:string,
+    queryKey:string
 }
 
 interface movieCard {
@@ -17,7 +18,7 @@ interface movieCard {
 }
 
 
-const MovieSlider = ({name, link}:movieList) => {
+const MovieSlider = ({name, link, queryKey}:movieList) => {
 
     const settings = {
         dots: false,
@@ -57,7 +58,7 @@ const MovieSlider = ({name, link}:movieList) => {
     }
 
     const {isLoading, isError, data } = useQuery({
-        queryKey: ["movies"],
+        queryKey: [queryKey],
         queryFn: (() => fetchData(link))
     })
 
@@ -68,12 +69,11 @@ const MovieSlider = ({name, link}:movieList) => {
     if(isError) {
         return <h1>An error occurred</h1>
     }
-  
     return (
     <div className="p-4 mx-5">
-        <h1 className="text-2xl font-bold mt-5 mb-3">{name}</h1>  
+        <h1 className="text-3xl  mt-5 mb-3">{name}</h1>  
         <Slider {...settings}>
-            {data.results.map((movie:movieCard) => {
+            {data.results?.map((movie:movieCard) => {
                 return <MovieCard movie={movie} key={movie.id} />
             })}
         </Slider> 
