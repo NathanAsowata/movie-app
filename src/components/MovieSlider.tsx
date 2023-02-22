@@ -12,7 +12,7 @@ interface movieList {
 }
 
 interface movieCard {
-    id:string,
+    id: number,
     title: string,
     poster_path: string,
     vote_average: number
