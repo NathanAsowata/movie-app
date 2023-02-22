@@ -3,7 +3,7 @@ import Stars from "./Stars"
 
 interface movieCardProp {
   movie: {
-    id:string,
+    id:number,
     title: string,
     poster_path: string,
     vote_average: number
