@@ -29,6 +29,7 @@ const SearchBar = () => {
     >
         <input 
             type="text"
+            placeholder="Find your favorite movie"
             required
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)} 

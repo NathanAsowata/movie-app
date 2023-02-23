@@ -1,6 +1,13 @@
 import NavBar from "@/components/NavBar"
 import { render, screen } from "@testing-library/react"
 
+
+// Mock useRouter hook
+jest.mock("next/router", () => ({
+    useRouter: jest.fn()
+}))
+
+
 it('should contain a nav element', () => { 
     render(<NavBar />)
     const navElement = screen.getByRole("navigation")
