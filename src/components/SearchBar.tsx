@@ -23,14 +23,22 @@ const SearchBar = () => {
     }
 
   return (
-    <form onSubmit={handleSearch}>
+    <form 
+        onSubmit={handleSearch} 
+        className="flex items-center rounded-full"
+    >
         <input 
             type="text"
+            required
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)} 
+            className="bg-slate-300 focus:bg-white h-8 lg:h-10 px-2 lg:px-4 md:w-[350px] lg:w-[500px] rounded-l-full outline-none"
         />
-        <button type={"submit"}>
-            <BsSearch />
+        <button 
+            type={"submit"}
+            className="bg-slate-300 h-8 lg:h-10 px-2 lg:px-4 rounded-r-full outline-none" 
+        >
+            <BsSearch className="text-xl" />
         </button>
     </form>
   )
