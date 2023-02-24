@@ -20,6 +20,9 @@ const SearchBar = () => {
         // Send the user request to the search result page for processing 
         router.push(`/search/${userInput}`)
 
+        // Make the search bar empty
+        setUserInput("")
+
     }
 
   return (
