@@ -90,7 +90,7 @@ const SearchResult = () => {
             <title> Search Results</title>
             <link rel="shortcut icon" href="/icon.png" type="image/x-icon" />
         </Head>
-        <main className="flex flex-wrap min-h-[85vh] bg-slate-800">
+        <main className="flex flex-wrap justify-center min-h-[85vh] bg-slate-800">
             {data.results.map((movie:movieCard) => {
                 // Only display movies with poster images
                 if(movie.poster_path !== null) return <MovieCard movie={movie} key={movie.id} />

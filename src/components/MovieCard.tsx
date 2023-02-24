@@ -40,7 +40,6 @@ const MovieCard = ({movie}:movieCardProp) => {
           width="100"
           height="100"
           style={{ width: '180px', height: 'auto' }}
-          priority
           />
           <section>
             <h3 className="text-md font-semibold py-2">
