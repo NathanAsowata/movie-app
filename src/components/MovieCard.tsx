@@ -37,8 +37,10 @@ const MovieCard = ({movie}:movieCardProp) => {
         <Image 
           src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} 
           alt={movie.title}
-          width={180}
-          height={200}
+          width="100"
+          height="100"
+          style={{ width: '180px', height: 'auto' }}
+          priority
           />
           <section>
             <h3 className="text-md font-semibold py-2">

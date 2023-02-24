@@ -34,7 +34,7 @@ const SearchResult = () => {
         return ( 
             <>
                 <Head>
-                    <title>{userInput} - Search Results</title>
+                    <title>Loading...</title>
                     <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
                 </Head>
                 <main className="grid place-content-center min-h-[95vh] bg-slate-800">
@@ -59,7 +59,7 @@ const SearchResult = () => {
         return ( 
             <>
                 <Head>
-                    <title>{userInput} - Search Results</title>
+                    <title> Search Results</title>
                     <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
                 </Head>
                 <main className="grid place-content-center min-h-[95vh] bg-slate-800">
@@ -87,7 +87,7 @@ const SearchResult = () => {
   return (
     <>
         <Head>
-            <title>{userInput} - Search Results</title>
+            <title> Search Results</title>
             <link rel="shortcut icon" href="/icon.png" type="image/x-icon" />
         </Head>
         <main className="flex flex-wrap min-h-[85vh] bg-slate-800">
