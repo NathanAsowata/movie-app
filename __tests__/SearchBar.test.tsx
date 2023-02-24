@@ -71,7 +71,7 @@ describe('SearchBar component logic', () => {
         // Click the button
         fireEvent.click(button)
 
-        // Expect router.push to be have been called
+        // Expect router.push not to be have been called
         expect(mockPush).not.toHaveBeenCalledWith("/search/plane")
       })
  })

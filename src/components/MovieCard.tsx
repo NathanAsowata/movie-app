@@ -33,7 +33,7 @@ const MovieCard = ({movie}:movieCardProp) => {
   }
 
   return (
-    <div className=" bg-slate-900 p-2 m-2 w-fit">
+    <div className=" bg-slate-900 p-2 m-2 w-fit text-white">
         <Image 
           src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} 
           alt={movie.title}
