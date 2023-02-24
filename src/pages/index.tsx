@@ -5,14 +5,14 @@ const Home = () => {
   return (
     <>
       <Head>
-        <title>Movies & TV shows</title>
+        <title>Movies </title>
         <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
       </Head>
       
-      <main className="bg-slate-800 text-white min-h-screen pb-10">
+      <main className="bg-slate-800 text-white pt-5 min-h-[85vh] pb-10">
         <header className="bg-[url('../../public/hero-image.jpg')] bg-no-repeat bg-cover bg-center h-[400px] grid place-content-center">
           <h1 className="shadow-md shadow-gray-400 bg-slate-900 p-3 mx-2 text-2xl lg:text-4xl text-center font-medium">
-            Explore Millions of Movies and TV Shows
+            Explore Millions of Movies for You
           </h1>
         </header>
 

@@ -68,19 +68,14 @@ const MovieSlider = ({name, link, queryKey}:movieList) => {
         return (
           <ContentLoader
             speed={2}
-            width={300}
             height={100}
-            viewBox="0 0 300 100"
+            viewBox="0 0 500 60"
             backgroundColor="#1E293B"
             foregroundColor="#0F172A"
             uniqueKey="shimmer"
-            className="flex"
+            className="flex row justify-between w-screen"
           >
-            <rect x="0" y="0" rx="3" ry="3" width="150" height="250" /> 
-            <rect x="0" y="20" rx="3" ry="3" width="150" height="250" /> 
-            <rect x="0" y="40" rx="3" ry="3" width="150" height="250" /> 
-            <rect x="0" y="60" rx="3" ry="3" width="150" height="250" /> 
-            <rect x="0" y="80" rx="3" ry="3" width="150" height="250" />
+            <rect x="0" y="0" rx="3" ry="3" width="500" height="250" /> 
           </ContentLoader>
         )
     }
@@ -93,7 +88,8 @@ const MovieSlider = ({name, link, queryKey}:movieList) => {
         <h1 className="text-3xl  mt-5 mb-3">{name}</h1>  
         <Slider {...settings}>
             {data.results?.map((movie:movieCard) => {
-                return <MovieCard movie={movie} key={movie.id} />
+                // Only display movies with poster images
+                if(movie.poster_path !== null) return <MovieCard movie={movie} key={movie.id} />
             })}
         </Slider> 
         

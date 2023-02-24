@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { useState } from "react"
 import Stars from "./Stars"
 
 interface movieCardProp {
@@ -11,7 +12,6 @@ interface movieCardProp {
 }
 
 const MovieCard = ({movie}:movieCardProp) => {
-
 
   const trucateMovieTitle = (title:string) => {
     // On screens less than 500px in width return the first 10 characters of the movie title string
@@ -33,12 +33,14 @@ const MovieCard = ({movie}:movieCardProp) => {
   }
 
   return (
-    <div className=" bg-slate-900 p-2 m-2 w-fit">
+    <div className=" bg-slate-900 p-2 m-2 w-[200px] h-[350px] text-white">
         <Image 
           src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} 
           alt={movie.title}
-          width={180}
-          height={100}
+          width="100"
+          height="100"
+          style={{ width: '180px', height: '270px' }}
+          
           />
           <section>
             <h3 className="text-md font-semibold py-2">
