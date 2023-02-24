@@ -37,7 +37,7 @@ const SearchResult = () => {
                     <title>Loading...</title>
                     <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
                 </Head>
-                <main className="grid place-content-center min-h-[95vh] bg-slate-800">
+                <main className="grid place-content-center pt-20 min-h-[95vh] bg-slate-800">
                     <ContentLoader
                         speed={2}
                         width={300}
@@ -62,7 +62,7 @@ const SearchResult = () => {
                     <title> Search Results</title>
                     <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
                 </Head>
-                <main className="grid place-content-center min-h-[95vh] bg-slate-800">
+                <main className="grid place-content-center pt-20 min-h-[95vh] bg-slate-800">
                     <h1 className="text-white">An error occured. Try again in a few minutes</h1>
                 </main>
             </>
@@ -76,7 +76,7 @@ const SearchResult = () => {
                 <title>No Results Found</title>
                 <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
             </Head>
-            <main className="grid place-content-center min-h-[95vh] bg-slate-800">
+            <main className="grid place-content-center pt-20 min-h-[95vh] bg-slate-800">
                 <h1 className="text-white">We could not find any result. Please search for another movie</h1>
             </main>
         </>
@@ -90,7 +90,7 @@ const SearchResult = () => {
             <title> {userInput} - Search Results</title>
             <link rel="shortcut icon" href="/icon.png" type="image/x-icon" />
         </Head>
-        <main className="flex flex-wrap min-h-[85vh] bg-slate-800">
+        <main className="flex flex-wrap pt-20 min-h-[85vh] bg-slate-800">
             {data.results.map((movie:movieCard) => {
                 // Only display movies with poster images
                 if(movie.poster_path !== null) return <MovieCard movie={movie} key={movie.id} />
