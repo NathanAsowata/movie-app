@@ -88,7 +88,8 @@ const MovieSlider = ({name, link, queryKey}:movieList) => {
         <h1 className="text-3xl  mt-5 mb-3">{name}</h1>  
         <Slider {...settings}>
             {data.results?.map((movie:movieCard) => {
-                return <MovieCard movie={movie} key={movie.id} />
+                // Only display movies with poster images
+                if(movie.poster_path !== null) return <MovieCard movie={movie} key={movie.id} />
             })}
         </Slider> 
         

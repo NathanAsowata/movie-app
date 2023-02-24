@@ -92,7 +92,8 @@ const SearchResult = () => {
         </Head>
         <main className="flex flex-wrap min-h-[85vh] bg-slate-800">
             {data.results.map((movie:movieCard) => {
-                return <MovieCard movie={movie} key={movie.id} />
+                // Only display movies with poster images
+                if(movie.poster_path !== null) return <MovieCard movie={movie} key={movie.id} />
             })}
         </main>
     </>
