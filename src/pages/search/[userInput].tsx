@@ -87,7 +87,7 @@ const SearchResult = () => {
   return (
     <>
         <Head>
-            <title> Search Results</title>
+            <title> {userInput} - Search Results</title>
             <link rel="shortcut icon" href="/icon.png" type="image/x-icon" />
         </Head>
         <main className="flex flex-wrap min-h-[85vh] bg-slate-800">
