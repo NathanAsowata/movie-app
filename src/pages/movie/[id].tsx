@@ -68,7 +68,7 @@ const MovieDetails = ({data}:movieDetailsInterface) => {
       </Head>
       <main className="pt-14 bg-slate-800 text-white min-h-[95vh]">
         <header 
-          className="w-screen h-[400px] bg-center bg-cover bg-no-repeat"
+          className="w-[100%] h-[400px] bg-center bg-cover bg-no-repeat"
           style={{backgroundImage: `url(https://image.tmdb.org/t/p/original/${data.backdrop_path})`}}
         >
         </header>
