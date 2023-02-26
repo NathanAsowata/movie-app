@@ -1,3 +1,4 @@
+import MovieCast from "@/components/MovieCast"
 import Stars from "@/components/Stars"
 import axios from "axios"
 import { format } from "date-fns"
@@ -15,16 +16,22 @@ interface movieDetailsInterface {
     overview: string,
     runtime: number,
     genres: {
-        id: string,
-        name: string
+      id: string,
+      name: string
     }[],
     spoken_languages: {
-        english_name: string
+      english_name: string
     }[],
     status: string,
     release_date: string,
     production_companies: {
-        name: string
+      name: string
+    }[],
+    cast: {
+      cast_id: number,
+      name: string,
+      character: string,
+      profile_path: string
     }[]
   }  
 
@@ -123,9 +130,8 @@ const MovieDetails = ({data}:movieDetailsInterface) => {
               </span>
             </p>
           </div>
-
         </section>
-
+        <MovieCast cast={data.cast} />
       </main>
     </>
   )
@@ -136,12 +142,22 @@ export default MovieDetails
 export const getServerSideProps = async (context:GetServerSidePropsContext) => {
 
   const movieId = context.query.id
+
+  // Get movie details
   const getMovieData = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US`)
-  const MovieDetails = await getMovieData.data
+  const movieDetails = await getMovieData.data
+
+  // Get cast and crew details
+  const getCastData = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/credits?api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US`)
+  const castDetails = await getCastData.data
+
+
+  // Merge both objects and return it as a single object
+  const finalResult = Object.assign({}, movieDetails, castDetails)
 
   return {
     props: {
-      data:  MovieDetails as movieDetailsInterface
+      data:  finalResult
     }
   }
 }
