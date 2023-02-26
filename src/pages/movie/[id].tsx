@@ -59,7 +59,7 @@ const MovieDetails = ({data}:movieDetailsInterface) => {
         <title>{data.title} - Movie Details</title>
         <link rel="shortcut icon" href="/icon.png" type="image/x-icon" />
       </Head>
-      <main className="pt-14 bg-slate-800 text-white">
+      <main className="pt-14 bg-slate-800 text-white min-h-[95vh]">
         <header 
           className="w-screen h-[400px] bg-center bg-cover bg-no-repeat"
           style={{backgroundImage: `url(https://image.tmdb.org/t/p/original/${data.backdrop_path})`}}
@@ -71,7 +71,7 @@ const MovieDetails = ({data}:movieDetailsInterface) => {
         <button className="bg-black shadow-lg shadow-slate-900 px-4 py-2 my-2">Watch Trailer</button>
         </section>
 
-        <section className="px-5 sm:px-10 sm:flex sm:flex-wrap sm:justify-between">
+        <section className="px-5 pb-10 sm:px-10 sm:flex sm:flex-wrap sm:justify-between">
           
           <div className="bg-slate-900 shadow-lg shadow-black mb-4 p-4 sm:max-w-[30vw]">
             <h2 className="text-xl mb-2">Overview</h2>
