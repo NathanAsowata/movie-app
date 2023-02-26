@@ -85,7 +85,7 @@ const MovieDetails = ({data}:movieDetailsInterface) => {
             <p>{data.overview}</p>
           </div>
           
-          <div className="bg-slate-900 shadow-lg shadow-black mb-4 p-4 sm:w-[60vw]">
+          <div className="bg-slate-900 shadow-lg shadow-black mb-4 p-4 w-fit sm:w-[60vw]">
             <h2 className="text-xl mb-2">Details</h2>
             <p> 
               <span className="font-semibold">

@@ -48,21 +48,21 @@ const MovieCast = ({cast}:movieCastProp) => {
 
 
  return(
-    <section className="text-white px-5 sm:px-10">
-        <h2 className="text-xl">Cast</h2>
+    <section className="text-white pt-5 pb-10 px-5 sm:px-10">
+        <h2 className="text-2xl pb-3 font-semibold">Cast</h2>
         <Slider {...settings}>
         {cast.map(person => {
             return(
-                <div key={person.cast_id}>
+                <div key={person.cast_id} className="">
                     <Image 
                         src={`https://image.tmdb.org/t/p/original${person.profile_path}`}
                         alt={person.name}
                         width="100"
                         height="100"
-                        style={{width: "180px", height: "auto"}}
+                        style={{width: "172px", height: "260px"}}
                     />
                     <h3>{person.name}</h3>
-                    <p>{person.character}</p>
+                    <p className="text-slate-400">{person.character}</p>
                 </div>
             )
         })}
