@@ -32,6 +32,7 @@ interface movieDetailsInterface {
 
 
 const MovieDetails = ({data}:movieDetailsInterface) => {
+
   return (
     <>
       <Head>
@@ -39,13 +40,11 @@ const MovieDetails = ({data}:movieDetailsInterface) => {
         <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
       </Head>
       <main className="pt-14 bg-slate-800 text-white">
-        <Image 
-          src={`https://image.tmdb.org/t/p/original/${data.backdrop_path}`}
-          alt={data.title}
-          width="400"
-          height="600"
-          style={{width: '100%', height: 'auto'}}
-        />
+        <header 
+          className="w-screen h-[400px] bg-center bg-cover bg-no-repeat"
+          style={{backgroundImage: `url(https://image.tmdb.org/t/p/original/${data.backdrop_path})`}}
+        >
+        </header>
         <section className="px-5 py-5 sm:px-10">
         <h1 className="text-2xl">{data.title}</h1>
         <Stars vote_average={data.vote_average} />
@@ -71,10 +70,16 @@ const MovieDetails = ({data}:movieDetailsInterface) => {
               <span className="font-semibold">
               Genre: &nbsp;
               </span>
+              <span>
+                {data.genres.map(genre => genre.name).join(", ")}
+              </span>
             </p>
             <p>
               <span className="font-semibold">
               Language: &nbsp;
+              </span>
+              <span>
+                {data.spoken_languages.map(language => language.english_name).join(", ")}
               </span>
             </p>
             <p>
@@ -92,6 +97,9 @@ const MovieDetails = ({data}:movieDetailsInterface) => {
             <p>
               <span className="font-semibold">
               Produced By: &nbsp;
+              </span>
+              <span>
+                {data.production_companies.map(company => company.name).join(", ")}
               </span>
             </p>
           </div>
