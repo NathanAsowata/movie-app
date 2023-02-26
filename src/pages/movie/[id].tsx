@@ -1,8 +1,8 @@
 import Stars from "@/components/Stars"
 import axios from "axios"
+import { format } from "date-fns"
 import { GetServerSidePropsContext } from "next"
 import Head from "next/head"
-import Image from "next/image"
 
 
 
@@ -32,6 +32,10 @@ interface movieDetailsInterface {
 
 
 const MovieDetails = ({data}:movieDetailsInterface) => {
+
+  const releaseDate = data.release_date
+  const date = new Date(releaseDate)
+  const formattedReleaseDate = format(date, 'dd MMMM yyyy')
 
   return (
     <>
@@ -92,7 +96,7 @@ const MovieDetails = ({data}:movieDetailsInterface) => {
               <span className="font-semibold">
               Released Date: &nbsp;
               </span> 
-              {data.release_date}
+              {formattedReleaseDate}
             </p>
             <p>
               <span className="font-semibold">
