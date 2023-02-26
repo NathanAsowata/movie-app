@@ -33,6 +33,22 @@ interface movieDetailsInterface {
 
 const MovieDetails = ({data}:movieDetailsInterface) => {
 
+  // This is to convert the runtimes minutes to a more readable one
+
+  const formattedMinutes = (minutes:number) => {
+    const hours = Math.floor(minutes/60)
+    const remainingMinutes = minutes % 60
+
+    if (hours > 0) {
+      return `${hours}h ${remainingMinutes}mins`
+    }
+    else {
+       return `${remainingMinutes}mins`
+    }
+  }
+
+
+  // This is to convert the release date format to a more readable one
   const releaseDate = data.release_date
   const date = new Date(releaseDate)
   const formattedReleaseDate = format(date, 'dd MMMM yyyy')
@@ -41,7 +57,7 @@ const MovieDetails = ({data}:movieDetailsInterface) => {
     <>
       <Head>
         <title>{data.title} - Movie Details</title>
-        <link rel="shortcut icon" href="icon.png" type="image/x-icon" />
+        <link rel="shortcut icon" href="/icon.png" type="image/x-icon" />
       </Head>
       <main className="pt-14 bg-slate-800 text-white">
         <header 
@@ -68,7 +84,7 @@ const MovieDetails = ({data}:movieDetailsInterface) => {
               <span className="font-semibold">
                 Runtime:&nbsp;
               </span> 
-              {data.runtime} mins
+              {formattedMinutes(data.runtime)}
             </p>
             <p> 
               <span className="font-semibold">
