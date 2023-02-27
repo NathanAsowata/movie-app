@@ -53,7 +53,7 @@ const MovieCast = ({cast}:movieCastProp) => {
         <Slider {...settings}>
         {cast.map(person => {
             return(
-                <div key={person.cast_id} className="">
+                <div key={person.cast_id} className="w-[172px]">
                     <Image 
                         src={`https://image.tmdb.org/t/p/original${person.profile_path}`}
                         alt={person.name}

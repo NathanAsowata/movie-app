@@ -58,7 +58,7 @@ const MovieSlider = ({name, link, queryKey}:movieList) => {
         return fetchResult.data
     }
 
-    const {isLoading, isError, data } = useQuery({
+    const { isLoading, isError, data } = useQuery({
         queryKey: [queryKey],
         queryFn: (() => fetchData(link))
     })
@@ -83,6 +83,7 @@ const MovieSlider = ({name, link, queryKey}:movieList) => {
     if(isError) {
         return <h1>An error occurred</h1>
     }
+    
     return (
     <div className="p-4 mx-5">
         <h1 className="text-3xl  mt-5 mb-3">{name}</h1>  

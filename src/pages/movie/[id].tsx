@@ -1,4 +1,5 @@
 import MovieCast from "@/components/MovieCast"
+import MovieTrailer from "@/components/MovieTrailer"
 import Stars from "@/components/Stars"
 import axios from "axios"
 import { format } from "date-fns"
@@ -10,6 +11,7 @@ import Head from "next/head"
 interface movieDetailsInterface {
   
   data: {
+    id: number,
     backdrop_path: string,
     title: string,
     vote_average: number,
@@ -67,19 +69,19 @@ const MovieDetails = ({data}:movieDetailsInterface) => {
         <link rel="shortcut icon" href="/icon.png" type="image/x-icon" />
       </Head>
       <main className="pt-14 bg-slate-800 text-white min-h-[95vh]">
+        
         <header 
           className="w-[100%] h-[400px] bg-center bg-cover bg-no-repeat"
-          style={{backgroundImage: `url(https://image.tmdb.org/t/p/original/${data.backdrop_path})`}}
-        >
+          style={{backgroundImage: `url(https://image.tmdb.org/t/p/original/${data.backdrop_path})`}}>
         </header>
+
         <section className="px-5 py-5 sm:px-10">
         <h1 className="text-2xl">{data.title}</h1>
         <Stars vote_average={data.vote_average} />
-        <button className="bg-black shadow-lg shadow-slate-900 px-4 py-2 my-2">Watch Trailer</button>
         </section>
+        <MovieTrailer id={data.id} />
 
-        <section className="px-5 pb-10 sm:px-10 sm:flex sm:flex-wrap sm:justify-between">
-          
+        <section className="mt-10 px-5 pb-10 sm:px-10 sm:flex sm:flex-wrap sm:justify-between">
           <div className="bg-slate-900 shadow-lg shadow-black mb-4 p-4 sm:max-w-[30vw]">
             <h2 className="text-xl mb-2">Overview</h2>
             <p>{data.overview}</p>
