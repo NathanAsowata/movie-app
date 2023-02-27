@@ -38,7 +38,7 @@ const MovieSlider = ({ name, link, queryKey }: movieList) => {
         settings: {
           arrows: false,
           slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToScroll: 2,
           swipeToSlide: true
         },
       },
@@ -47,7 +47,7 @@ const MovieSlider = ({ name, link, queryKey }: movieList) => {
         settings: {
           arrows: false,
           slidesToShow: 2,
-          slidesToScroll: 2,
+          slidesToScroll: 1,
           swipeToSlide: true
         },
       },
