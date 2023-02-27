@@ -11,7 +11,7 @@ const NavBar = () => {
           alt={"Movie app logo"}
           width={50}
           height={50}
-          className="shadow shadow-white"
+          className="shadow shadow-white mr-10"
         />
       </Link>
       <SearchBar />
