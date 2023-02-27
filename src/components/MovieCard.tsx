@@ -1,4 +1,5 @@
 import Image from "next/image"
+import Link from "next/link"
 import { useState } from "react"
 import Stars from "./Stars"
 
@@ -33,22 +34,24 @@ const MovieCard = ({movie}:movieCardProp) => {
   }
 
   return (
-    <div className=" bg-slate-900 p-2 m-2 w-[200px] h-[350px] text-white">
-        <Image 
-          src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} 
-          alt={movie.title}
-          width="100"
-          height="100"
-          style={{ width: '180px', height: '270px' }}
-          
-          />
-          <section>
-            <h3 className="text-md font-semibold py-2">
-              {trucateMovieTitle(movie.title)}
-            </h3>
-            <Stars vote_average={movie.vote_average} />
-          </section>
-    </div>
+    <Link href={`/movie/${movie.id}`}>
+      <div className=" bg-slate-900 p-2 m-2 w-[200px] h-[350px] text-white">
+          <Image 
+            src={`https://image.tmdb.org/t/p/original${movie.poster_path}`} 
+            alt={movie.title}
+            width="100"
+            height="100"
+            style={{ width: '180px', height: '270px' }}
+            
+            />
+            <section>
+              <h3 className="text-md font-semibold py-2">
+                {trucateMovieTitle(movie.title)}
+              </h3>
+              <Stars vote_average={movie.vote_average} />
+            </section>
+      </div>
+    </Link>
   )
 }
 

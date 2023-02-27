@@ -19,14 +19,14 @@ const SearchResult = () => {
     const router = useRouter()
     const { userInput } = router.query
 
-    const fetchData = async (query:any) => {
-        let fetchResult = await axios.get(`https://api.themoviedb.org/3/search/movie?query=${query}&api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en`)
+    const fetchData = async () => {
+        let fetchResult = await axios.get(`https://api.themoviedb.org/3/search/movie?query=${userInput}&api_key=${process.env.NEXT_PUBLIC_API_KEY}&language=en-US`)
         return fetchResult.data
     }
 
     const {isLoading, isError, data} = useQuery({
         queryKey: ["search", userInput],
-        queryFn: () => fetchData(userInput)
+        queryFn: () => fetchData()
     })
 
     if(isLoading) {
