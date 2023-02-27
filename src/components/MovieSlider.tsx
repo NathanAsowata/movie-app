@@ -23,7 +23,7 @@ const MovieSlider = ({ name, link, queryKey }: movieList) => {
     infinite: true,
     speed: 500,
     slidesToShow: 6,
-    slidesToScroll: 2,
+    slidesToScroll: 3,
     swipeToSlide: true,
     responsive: [
       {
@@ -36,15 +36,19 @@ const MovieSlider = ({ name, link, queryKey }: movieList) => {
       {
         breakpoint: 768,
         settings: {
+          arrows: false,
           slidesToShow: 3,
-          slidesToScroll: 1,
+          slidesToScroll: 3,
+          swipeToSlide: true
         },
       },
       {
         breakpoint: 500,
         settings: {
-          slidesToShow: 1.8,
-          slidesToScroll: 1,
+          arrows: false,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          swipeToSlide: true
         },
       },
     ],
@@ -82,7 +86,7 @@ const MovieSlider = ({ name, link, queryKey }: movieList) => {
   }
 
   return (
-    <div className="p-4 mx-5">
+    <div className="p-1 sm:p-4 mx-1 sm:mx-5">
       <h1 className="text-3xl  mt-5 mb-3">{name}</h1>
       <Slider {...settings}>
         {data.results?.map((movie: movieCard) => {

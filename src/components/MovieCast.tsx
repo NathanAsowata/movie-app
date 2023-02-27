@@ -29,22 +29,26 @@ const MovieCast = ({ cast }: movieCastProp) => {
       {
         breakpoint: 768,
         settings: {
+          arrows: false,
           slidesToShow: 3,
-          slidesToScroll: 1,
+          slidesToScroll: 3,
+          swipeToSlide: true
         },
       },
       {
         breakpoint: 500,
         settings: {
-          slidesToShow: 1.8,
-          slidesToScroll: 1,
+          arrows: false,
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          swipeToSlide: true
         },
       },
     ],
   };
 
   return (
-    <section className="text-white pt-5 pb-10 px-5 sm:px-10">
+    <section className="text-white pt-5 pb-10 px-1 sm:px-10">
       <h2 className="text-2xl pb-3 font-semibold">Cast</h2>
       <Slider {...settings}>
         {cast.map((person) => {
