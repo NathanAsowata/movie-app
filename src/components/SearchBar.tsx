@@ -29,7 +29,7 @@ const SearchBar = () => {
         required
         value={userInput}
         onChange={(e) => setUserInput(e.target.value)}
-        className="bg-slate-300 focus:bg-white h-8 w-60 sm:h-10 px-2 sm:px-4 md:w-[350px] sm:w-[500px] rounded-l-full outline-none"
+        className="bg-slate-300 focus:bg-white h-8 w-40 sm:h-10 px-2 sm:px-4 md:w-[350px] sm:w-[500px] rounded-l-full outline-none"
       />
       <button
         type={"submit"}
